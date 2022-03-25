@@ -1,0 +1,5 @@
+---
+services:
+  demo-express-api:
+    container_name: demo-express-api-prod
+    command: npm run start

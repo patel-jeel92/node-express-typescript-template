@@ -1,0 +1,9 @@
+/node_modules
+/dist
+/logs
+/coverage
+/src/public/components
+
+.eslintcache
+.DS_Store
+.env

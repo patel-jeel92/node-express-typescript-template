@@ -1,0 +1,30 @@
+---
+services:
+  demo-express-api:
+    restart: always
+    build: .
+    environment:
+      - NODE_ENV=production
+    ports:
+      - '4000:4000'
+    networks:
+      - internal
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./config/prometheus:/etc/prometheus
+    networks:
+      - internal
+  grafana:
+    image: grafana/grafana
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./config/grafana:/etc/grafana/provisioning
+    networks:
+      - internal
+
+networks:
+  internal:
