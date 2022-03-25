@@ -5,7 +5,7 @@ export const metricsMiddleware = promBundle({
 	includePath: true,
 	includeStatusCode: true,
 	includeUp: true,
-	customLabels: { project_name: 'atlas-cart-broker', project_type: '' },
+	customLabels: { project_name: 'demo-express-api', project_type: '' },
 	promClient: {
 		collectDefaultMetrics: {},
 	},

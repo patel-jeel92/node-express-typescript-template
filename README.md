@@ -141,14 +141,12 @@ Request data is validated using [Zod](https://github.com/colinhacks/zod). Check 
 The validation schemas are defined in the `src/validations` directory and are used in the routes by providing them as parameters to the `validate` middleware.
 
 ```javascript
-const express = require('express');
-const validate = require('../../middlewares/validate');
-const cartValidation = require('../../validations/cart.validation');
-const cartController = require('../../controllers/cart.controller');
+import express from 'express';
+import * as testController from '../../controllers/test.controller';
+import * as testValidation from '../../validations/test.validation';
+export const router = express.Router();
 
-const router = express.Router();
-
-router.post('/cart', validate(cartValidation.addToCart), cartController.addToCart);
+router.route('/:name').get(testValidation.validateRequest, testController.helloWorld);
 ```
 
 ## Logging

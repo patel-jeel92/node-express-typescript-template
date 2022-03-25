@@ -2,7 +2,7 @@
 global:
   scrape_interval: 15s
   external_labels:
-    monitor: 'atlas-cart-broker-monitor'
+    monitor: 'demo-express-api-monitor'
 
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
@@ -15,4 +15,4 @@ scrape_configs:
   - job_name: 'node-app'
     scrape_interval: 5s
     static_configs:
-      - targets: ['atlas-cart-broker:6500']
+      - targets: ['demo-express-api:6500']
